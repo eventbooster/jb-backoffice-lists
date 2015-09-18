@@ -11,7 +11,7 @@
 	* Transcludes datatable for the entity.
 	*/
 	angular
-	.module( 'jb.backofficeListView', [] )
+	.module( 'jb.backofficeListView', [ 'ui.router' ] )
 	.directive( 'listView', [ '$filter', '$state', '$stateParams', function( $filter, $state, $stateParams ) {
 
 		return {
@@ -28,7 +28,7 @@
 				// FUNCTIONS
 				// Redirect functions for add and edit
 				scope.add = function() {
-					$state.go( 'app.detail', { entityName: entityName, entityId: '/new' } );
+					$state.go( 'app.detail', { entityName: entityName, entityId: 'new' } );
 				};
 
 				scope.edit = function( id ) {
