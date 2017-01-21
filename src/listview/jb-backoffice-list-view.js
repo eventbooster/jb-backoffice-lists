@@ -48,7 +48,7 @@
 					// Edit
 					scope.fields.push( {
 						content: function( data ) {
-							return '<button class="btn btn-default btn-sm" data-ng-click="edit('+data.id+')">' + $filter( 'translate' )( 'web.backoffice.edit' ) + '</button>';
+							return '<a class="btn btn-default btn-sm" ui-sref="app.detail({\'entityName\':\'' +  entityName + '\', \'entityId\':' + entityId + '})">' + $filter( 'translate' )( 'web.backoffice.edit' ) + '</button>';
 						}
 					} );
 				}
