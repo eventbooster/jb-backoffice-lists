@@ -17,8 +17,7 @@
 		return {
 			link			: function( scope, element, attrs ) {
 
-				var entityName = $stateParams.entityName
-					, entityId = $stateParams.entityId;
+				var entityName = $stateParams.entityName;
 
 				// TRANSLATIONS
 				// Set translations
@@ -48,7 +47,7 @@
 					// Edit
 					scope.fields.push( {
 						content: function( data ) {
-							return '<a class="btn btn-default btn-sm" ui-sref="app.detail({\'entityName\':\'' +  entityName + '\', \'entityId\':' + entityId + '})">' + $filter( 'translate' )( 'web.backoffice.edit' ) + '</button>';
+							return '<a class="btn btn-default btn-sm" ui-sref="app.detail({\'entityName\':\'' +  entityName + '\', \'entityId\':' + data.id + '})">' + $filter( 'translate' )( 'web.backoffice.edit' ) + '</button>';
 						}
 					} );
 				}
