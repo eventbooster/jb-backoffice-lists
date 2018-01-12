@@ -18,6 +18,7 @@
 			link			: function( scope, element, attrs ) {
 
 				var entityName = $stateParams.entityName;
+				scope.entityName = entityName;
 
 				// TRANSLATIONS
 				// Set translations
@@ -26,9 +27,9 @@
 
 				// FUNCTIONS
 				// Redirect functions for add and edit
-				scope.add = function() {
+				/*scope.add = function() {
 					$state.go( 'app.detail', { entityName: entityName, entityId: 'new' } );
-				};
+				};*/
 
 				scope.edit = function( id ) {
 					$state.go( 'app.detail', { entityName: entityName, entityId: id } );
@@ -70,10 +71,11 @@
 						'<div notification></div>' +
 						'<div class=\'row list-menu\'>' +
 							'<div class=\'col-xs-12\'>' +
-								'<button type=\'button\' class=\'btn btn-sm btn-primary pull-right\' ng-click=\'add()\'>' +
+								'<a ui-sref=\'app.detail({ entityName: entityName, entityId: "new"})\' class=\'btn btn-sm btn-primary pull-right\'>' +
+								//'<button type=\'button\' class=\'btn btn-sm btn-primary pull-right\' ng-click=\'add()\'>' +
 									'<i class=\'fa fa-plus\'></i>' +
 									'{{ addText }}' +
-								'</button>' +
+								'</a>' +
 							'</div>' +
 						'</div>' +
 						'<div class=\'row\'>' +
